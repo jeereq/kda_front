@@ -12,7 +12,7 @@ import {
   userQuery,
   userSavedPinsQuery,
 } from "../utils/data";
-import { client } from "../client";
+import { client, urlFor } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 import { UserDetails } from "./index";
@@ -83,7 +83,7 @@ const UserProfile = () => {
             />
             <img
               className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
-              src={user?.image?.url || user?.image}
+              src={urlFor(user.image)}
               alt="user-pic"
             />
           </div>
