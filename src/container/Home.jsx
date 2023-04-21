@@ -11,7 +11,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 import { Sidebar, UserProfile } from '../components';
 import { userQuery } from '../utils/data';
-import { client } from '../client';
+import { client, urlFor } from '../client';
 import Pins from './Pins';
 import logo from '../assets/logo.png';
 
@@ -46,7 +46,7 @@ const Home = () => {
             <img src={logo} alt="logo" className="w-28" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt="user-pic" className="w-9 h-9 rounded-full " />
+            <img src={urlFor(user?.image)} alt="user-pic" className="w-9 h-9 rounded-full " />
           </Link>
         </div>
         {toggleSidebar && (

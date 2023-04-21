@@ -44,7 +44,6 @@ const Login = () => {
           autoPlay
           className="w-full h-full object-cover"
         />
-
       </div>
     </div>
   );

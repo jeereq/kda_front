@@ -13,8 +13,6 @@ import { userLogin } from '../utils/data';
 import { client } from '../client';
 
 const Login = () => {
-  const userImage = 'https://source.unsplash.com/1600x900/?nature,photography,technology';
-  const image = 'https://cdn.sanity.io/images/96u1hx5i/production/149e6bfdb5f26188303f1e426f6145151052d136-1620x2880.jpg';
   const [login, setLogin] = useState({
     name: '',
     email: '',
@@ -36,7 +34,6 @@ const Login = () => {
     client
       .fetch(query)
       .then(([data]) => {
-        console.log(data, login);
         if (typeof data !== 'undefined') {
           localStorage.setItem('user', JSON.stringify(data));
           navigate('/');
@@ -50,13 +47,6 @@ const Login = () => {
         setLoading(false);
       });
   };
-  useEffect(() => {
-    const User = localStorage.getItem('user') !== 'undefined'
-      ? JSON.parse(localStorage.getItem('user'))
-      : localStorage.clear();
-
-    // if (!User) navigate("/");
-  }, []);
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
