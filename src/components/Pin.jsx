@@ -126,7 +126,7 @@ const Pin = ({ pin }) => {
                 </button>
               )}
             </div>
-            <div className=" flex justify-between items-center gap-1 w-full">
+            <div className="flex justify-between items-center gap-1 w-full">
               {destination?.slice(8).length > 0 ? (
                 <a
                   href={destination}
@@ -175,7 +175,7 @@ const Pin = ({ pin }) => {
       >
         <img
           className="w-8 h-8 rounded-full object-cover"
-          src={postedBy?.image?.url || postedBy?.image}
+          src={urlFor(postedBy?.image)}
           alt="user-profile"
         />
         <p className="font-semibold capitalize">{postedBy?.userName}</p>

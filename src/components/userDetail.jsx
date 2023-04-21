@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-import { client } from '../client';
+import { client, urlFor } from '../client';
 import Spinner from './Spinner';
 
 const CreatePin = ({ user, setUser }) => {
@@ -128,11 +128,13 @@ const CreatePin = ({ user, setUser }) => {
               </label>
             ) : (
               <div className="relative h-full">
+                {imageAsset && (
                 <img
-                  src={imageAsset?.url || imageAsset}
+                  src={urlFor(imageAsset)}
                   alt="uploaded-pic"
                   className="h-full w-full"
                 />
+                )}
                 {user?._id === currentUser._id && (
                   <button
                     type="button"
@@ -248,7 +250,7 @@ const CreatePin = ({ user, setUser }) => {
           {user && (
             <div className="flex gap-2 mt-2 mb-2 items-center bg-white rounded-lg ">
               <img
-                src={user?.image?.url || user?.image}
+                src={urlFor(user?.image)}
                 className="w-10 h-10 rounded-full"
                 alt="user-profile"
               />

@@ -13,8 +13,6 @@ import { userLogin } from '../utils/data';
 import { client } from '../client';
 
 const Login = () => {
-  const userImage = 'https://source.unsplash.com/1600x900/?nature,photography,technology';
-  const image = 'https://cdn.sanity.io/images/96u1hx5i/production/149e6bfdb5f26188303f1e426f6145151052d136-1620x2880.jpg';
   const [login, setLogin] = useState({
     name: '',
     email: '',
