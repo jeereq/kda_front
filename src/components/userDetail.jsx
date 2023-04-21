@@ -128,11 +128,13 @@ const CreatePin = ({ user, setUser }) => {
               </label>
             ) : (
               <div className="relative h-full">
+                {imageAsset && (
                 <img
                   src={urlFor(imageAsset)}
                   alt="uploaded-pic"
                   className="h-full w-full"
                 />
+                )}
                 {user?._id === currentUser._id && (
                   <button
                     type="button"
@@ -248,7 +250,7 @@ const CreatePin = ({ user, setUser }) => {
           {user && (
             <div className="flex gap-2 mt-2 mb-2 items-center bg-white rounded-lg ">
               <img
-                src={urlFor(user.image)}
+                src={urlFor(user?.image)}
                 className="w-10 h-10 rounded-full"
                 alt="user-profile"
               />

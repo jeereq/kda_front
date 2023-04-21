@@ -34,6 +34,7 @@ const Login = () => {
     client
       .fetch(query)
       .then(([data]) => {
+        console.log(data, login);
         if (typeof data !== 'undefined') {
           localStorage.setItem('user', JSON.stringify(data));
           navigate('/');
@@ -47,6 +48,13 @@ const Login = () => {
         setLoading(false);
       });
   };
+  useEffect(() => {
+    const User = localStorage.getItem('user') !== 'undefined'
+      ? JSON.parse(localStorage.getItem('user'))
+      : localStorage.clear();
+
+    // if (!User) navigate("/");
+  }, []);
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">

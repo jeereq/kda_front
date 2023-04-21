@@ -83,7 +83,7 @@ const UserProfile = () => {
             />
             <img
               className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
-              src={urlFor(user.image)}
+              src={urlFor(user?.image)}
               alt="user-pic"
             />
           </div>
