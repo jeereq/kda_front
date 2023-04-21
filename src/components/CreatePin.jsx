@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
 
 import { categories, domaines, salaires } from '../utils/data';
-import { client } from '../client';
+import { client, urlFor } from '../client';
 import Spinner from './Spinner';
 
 const CreatePin = ({ user }) => {
@@ -160,7 +160,7 @@ const CreatePin = ({ user }) => {
           {user && (
             <div className="flex gap-2 mt-2 mb-2 items-center bg-white rounded-lg ">
               <img
-                src={user.image}
+                src={urlFor(user.image)}
                 className="w-10 h-10 rounded-full"
                 alt="user-profile"
               />
