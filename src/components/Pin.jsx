@@ -175,7 +175,7 @@ const Pin = ({ pin }) => {
       >
         <img
           className="w-8 h-8 rounded-full object-cover"
-          src={postedBy?.image?.url || postedBy?.image}
+          src={urlFor(postedBy.image)}
           alt="user-profile"
         />
         <p className="font-semibold capitalize">{postedBy?.userName}</p>
